@@ -1,12 +1,7 @@
 //
-//  ContainerMainViewView.swift
-//  SlideOutMenu
-//
-//  Created by ALIREZA TABRIZI on 12/3/16.
-//  Copyright © 2016 AR-T.com, Inc. All rights reserved.
-//
+//  ContainerMainView.swift
+//  tutorial_side_menu
 
-/// The ContainerMainView is the main class that will manage everything and all the sub views
 
 import UIKit
 
@@ -16,41 +11,47 @@ enum SideMenuState{
     case opened
 }
 
-class ContainerMainView: UIViewController, SideMenuDelegate {
-
-    // Variable Definition
-    var centerNavagationController: UINavigationController!
+class ContainerMainView: UIViewController,SideMenuDelegate {
+    
+    //variables definition
+    var centerNavigationController: UINavigationController!
     var centerViewController: MainView!
     
-    var sideMenuState: SideMenuState = .closed{
+    var side_menu_state: SideMenuState = .closed
+        {
         didSet{
-            let showShadow = sideMenuState != .closed
-            showShadowForCenterViewController(shouldShowShadow: showShadow)
+            let ShowShadow = side_menu_state != .closed
+            showShadowForCenterViewController(ShowShadow)
         }
     }
+ 
+    var side_menu_controller: SideMenuController?
     
-    var sideMenuController: SideMenuController?
-    let sideMenuWidth: CGFloat = 150 //define here the side menu width
+    let sidemenu_width: CGFloat = 150
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainView") as? MainView
-        
+        let main_storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+       
+        centerViewController = main_storyboard.instantiateViewController(withIdentifier: "MainView") as? MainView
+
+
         sideMenuDelegate = self
         
-        centerNavagationController = UINavigationController(rootViewController: centerNavagationController)
-        view.addSubview(centerNavagationController.view)
+        centerNavigationController = UINavigationController(rootViewController: centerViewController)
+        view.addSubview(centerNavigationController.view)
+        addChildViewController(centerNavigationController)
         
-        centerNavagationController.didMove(toParentViewController: self)
+        centerNavigationController.didMove(toParentViewController: self)
         
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(ContainerMainView.handlePanGesture(_:)))
-        centerNavagationController.view.addGestureRecognizer(panGestureRecognizer)
+        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
     }
     
-    func tooglePanel() {
-        let notAlreadyExpanded = (sideMenuState != .opened)
+    func togglePanel() {
+        let notAlreadyExpanded = (side_menu_state != .opened)
         if notAlreadyExpanded{
             addPanelViewController()
         }
@@ -58,74 +59,70 @@ class ContainerMainView: UIViewController, SideMenuDelegate {
     }
     
     func collapseSidePanels() {
-        switch (sideMenuState){
+        switch (side_menu_state){
         case .opened:
-            tooglePanel()
+            togglePanel()
         default:
             break
         }
     }
     
     func addPanelViewController() {
-        if sideMenuController == nil {
-            let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if(side_menu_controller == nil){
+            let main_storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             
-            sideMenuController = mainStoryBoard.instantiateViewController(withIdentifier: "SideMenu") as? SideMenuController
+            side_menu_controller = main_storyboard.instantiateViewController(withIdentifier: "SideMenu") as? SideMenuController
             
-            addChildSidePanelController(menu: sideMenuController!)
+            addChildSidePanelController(side_menu_controller!)
         }
     }
-    
-    func addChildSidePanelController(menu: SideMenuController) {
+    func addChildSidePanelController(_ menu: SideMenuController) {
         view.insertSubview(menu.view, at: 0)
         addChildViewController(menu)
         menu.didMove(toParentViewController: self)
     }
     
     func animateRightPanel(shouldExpand: Bool) {
-        if shouldExpand {
-            sideMenuState = .opened
-            animateCenterPanelXPosition(targetPosition: sideMenuWidth)
+        if (shouldExpand) {
+            side_menu_state = .opened
+            animateCenterPanelXPosition(targetPosition: sidemenu_width)
+            
         } else {
-            animateCenterPanelXPosition(targetPosition: 0, completion: { _ in
-                self.sideMenuState = .closed
+            animateCenterPanelXPosition(targetPosition: 0) { _ in
+                self.side_menu_state = .closed
                 
-                self.sideMenuController!.view.removeFromSuperview()
-                self.sideMenuController = nil
-            })
+                self.side_menu_controller!.view.removeFromSuperview()
+                self.side_menu_controller = nil;
+            }
         }
     }
     
-    func animateCenterPanelXPosition(targetPosition: CGFloat, completion: ((Bool) -> Void)! = nil) {
+    func animateCenterPanelXPosition(targetPosition: CGFloat, _ completion: ((Bool) -> Void)! = nil) {
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            self.centerNavagationController.view.frame.origin.x = targetPosition
-        }, completion: completion)
+            self.centerNavigationController.view.frame.origin.x = targetPosition
+            }, completion: completion)
     }
     
-    func showShadowForCenterViewController(shouldShowShadow: Bool) {
+    func showShadowForCenterViewController(_ shouldShowShadow: Bool) {
         if (shouldShowShadow) {
-            centerNavagationController.view.layer.shadowOpacity = 0.8
-            centerNavagationController.view.layer.shadowRadius = 20
+            centerNavigationController.view.layer.shadowOpacity = 0.8
+            centerNavigationController.view.layer.shadowRadius = 20
         } else {
-            centerNavagationController.view.layer.shadowOpacity = 0.0
+            centerNavigationController.view.layer.shadowOpacity = 0.0
         }
     }
     
-    func openSideMenu()
-    {
-        tooglePanel()
-    }
-
-    func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
+    
+        func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
         let gestureIsDraggingFromLeftToRight = (recognizer.velocity(in: view).x > 0)
         
         switch(recognizer.state){
         case .began:
-            if(sideMenuState == .closed){
+            if(side_menu_state == .closed){
                 if(gestureIsDraggingFromLeftToRight == false){
                     addPanelViewController()
                 }
-                showShadowForCenterViewController(shouldShowShadow: true)
+                showShadowForCenterViewController(true)
             }
             
         case .changed:
@@ -139,7 +136,7 @@ class ContainerMainView: UIViewController, SideMenuDelegate {
             
             
         case .ended:
-            if(sideMenuController != nil)
+            if(side_menu_controller != nil)
             {
                 let rec_center = recognizer.view!.center.x
                 let screen_center = recognizer.view!.frame.width/2
@@ -163,20 +160,10 @@ class ContainerMainView: UIViewController, SideMenuDelegate {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    func open_side_menu()
+    {
+        togglePanel()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

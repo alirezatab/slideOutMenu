@@ -14,12 +14,12 @@
 		C29DBC791DF2B27600E916D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29DBC771DF2B27600E916D4 /* LaunchScreen.storyboard */; };
 		C29DBC841DF2B27600E916D4 /* SlideOutMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBC831DF2B27600E916D4 /* SlideOutMenuTests.swift */; };
 		C29DBC8F1DF2B27600E916D4 /* SlideOutMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBC8E1DF2B27600E916D4 /* SlideOutMenuUITests.swift */; };
-		C29DBC9D1DF2B44600E916D4 /* ContainerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBC9C1DF2B44600E916D4 /* ContainerMainView.swift */; };
 		C29DBC9F1DF2B76100E916D4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBC9E1DF2B76100E916D4 /* MainView.swift */; };
 		C29DBCA11DF2B77F00E916D4 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBCA01DF2B77F00E916D4 /* SideMenuController.swift */; };
 		C29DBCA51DF2BC1800E916D4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBCA41DF2BC1800E916D4 /* Common.swift */; };
 		C29DBCA71DF2C75500E916D4 /* im1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C29DBCA61DF2C75500E916D4 /* im1.jpg */; };
 		C29DBCA91DF2C75B00E916D4 /* im2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C29DBCA81DF2C75B00E916D4 /* im2.jpg */; };
+		C29DBCAC1DF38E5100E916D4 /* ContainerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBCAB1DF38E5100E916D4 /* ContainerMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +53,12 @@
 		C29DBC8A1DF2B27600E916D4 /* SlideOutMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideOutMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29DBC8E1DF2B27600E916D4 /* SlideOutMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuUITests.swift; sourceTree = "<group>"; };
 		C29DBC901DF2B27600E916D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C29DBC9C1DF2B44600E916D4 /* ContainerMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerMainView.swift; sourceTree = "<group>"; };
 		C29DBC9E1DF2B76100E916D4 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C29DBCA01DF2B77F00E916D4 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		C29DBCA41DF2BC1800E916D4 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		C29DBCA61DF2C75500E916D4 /* im1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = im1.jpg; sourceTree = "<group>"; };
 		C29DBCA81DF2C75B00E916D4 /* im2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = im2.jpg; sourceTree = "<group>"; };
+		C29DBCAB1DF38E5100E916D4 /* ContainerMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			children = (
 				C29DBC6B1DF2B27600E916D4 /* AppDelegate.swift */,
 				C29DBCA41DF2BC1800E916D4 /* Common.swift */,
-				C29DBC9C1DF2B44600E916D4 /* ContainerMainView.swift */,
+				C29DBCAB1DF38E5100E916D4 /* ContainerMainView.swift */,
 				C29DBC9E1DF2B76100E916D4 /* MainView.swift */,
 				C29DBCA01DF2B77F00E916D4 /* SideMenuController.swift */,
 				C29DBC6F1DF2B27600E916D4 /* Main.storyboard */,
@@ -290,10 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C29DBC9D1DF2B44600E916D4 /* ContainerMainView.swift in Sources */,
 				C29DBCA11DF2B77F00E916D4 /* SideMenuController.swift in Sources */,
 				C29DBC741DF2B27600E916D4 /* SlideOutMenu.xcdatamodeld in Sources */,
 				C29DBC9F1DF2B76100E916D4 /* MainView.swift in Sources */,
+				C29DBCAC1DF38E5100E916D4 /* ContainerMainView.swift in Sources */,
 				C29DBC6C1DF2B27600E916D4 /* AppDelegate.swift in Sources */,
 				C29DBCA51DF2BC1800E916D4 /* Common.swift in Sources */,
 			);
@@ -390,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -433,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -451,6 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AR-T.SlideOutMenu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -464,6 +465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AR-T.SlideOutMenu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

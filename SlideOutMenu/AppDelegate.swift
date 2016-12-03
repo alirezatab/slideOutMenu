@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+@available(iOS 10.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Define MainViewInterface
         window = UIWindow(frame: UIScreen.main.bounds)
-        let containerMainView = ContainerMainView()
-        window!.rootViewController = containerMainView
+        let containermainview = ContainerMainView()
+        window!.rootViewController = containermainview
         window!.makeKeyAndVisible()
         
         return true
