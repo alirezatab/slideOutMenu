@@ -34,8 +34,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Side Menue in iOS" id="oTJ-v1-VKd">
-                        <barButtonItem key="rightBarButtonItem" title="open" id="cWU-hV-Ief"/>
+                        <barButtonItem key="rightBarButtonItem" title="open" id="cWU-hV-Ief">
+                            <connections>
+                                <action selector="OpenWithSender:" destination="BYZ-38-t0r" id="U1t-h6-DGt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="background" destination="bi3-35-Q18" id="KdZ-23-OvP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,7 +76,7 @@
                                     <constraint firstAttribute="width" constant="140" id="f7s-PB-uwu"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="W5f-Fg-qbB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="W5f-Fg-qbB">
                                         <rect key="frame" x="0.0" y="28" width="140" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W5f-Fg-qbB" id="mGe-mI-wvy">
@@ -90,29 +97,13 @@
                             <constraint firstItem="FnY-pc-Oi0" firstAttribute="top" secondItem="eHN-hU-hUh" secondAttribute="bottom" id="qd4-hM-l6X"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="FnY-pc-Oi0" id="k9f-ho-KDQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvE-iR-vfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1821.5999999999999" y="328.78560719640183"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rOc-Ze-EL5">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WW9-6U-mEb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fUf-Rr-Kd7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CI8-cr-ved"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wmo-gr-Bba" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="157.59999999999999" y="792.95352323838085"/>
         </scene>
     </scenes>
 </document>
