@@ -17,7 +17,7 @@ import Foundation
 
 //delegate from the side menu click
 @objc protocol SideMenuClick{
-    var currenBackground: Int{
+    var currenBackground: Int {
         get set
     }
     @objc optional func requestBackgroundUpdate()

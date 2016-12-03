@@ -12,11 +12,12 @@
 
 import UIKit
 
-class MainView: UIViewController {
+class MainView: UIViewController, SideMenuClick {
+
 
     @IBOutlet var background: UIImageView!
-    var current_background: Int = 0
-    var b_list : [String] = ["im1.jpg", "im2.jpg"]
+    internal var currenBackground: Int = 0
+    var blist : [String] = ["im1.jpg", "im2.jpg"]
     
     
     @IBAction func Open(sender: AnyObject) {
@@ -26,13 +27,12 @@ class MainView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        background.image = UIImage(named: b_list[current_background])
+        background.image = UIImage(named: blist[currenBackground])
         sideMenuClick = self
     }
     
-    func request_background_update()
-    {
-        background.image = UIImage(named: b_list[current_background])
+    func requestBackgroundUpdate() {
+        background.image = UIImage(named: blist[currenBackground])
     }
 
     override func didReceiveMemoryWarning() {

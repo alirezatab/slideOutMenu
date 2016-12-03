@@ -38,10 +38,10 @@ class ContainerMainView: UIViewController, SideMenuDelegate {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainView") as? MainView
         
-        SideMenuDelegate = self
+        sideMenuDelegate = self
         
         centerNavagationController = UINavigationController(rootViewController: centerNavagationController)
-        view.addSubview(centerNavagationController)
+        view.addSubview(centerNavagationController.view)
         
         centerNavagationController.didMove(toParentViewController: self)
         
@@ -116,7 +116,7 @@ class ContainerMainView: UIViewController, SideMenuDelegate {
         tooglePanel()
     }
 
-    func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+    func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
         let gestureIsDraggingFromLeftToRight = (recognizer.velocity(in: view).x > 0)
         
         switch(recognizer.state){
