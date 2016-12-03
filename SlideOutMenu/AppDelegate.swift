@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //Define MainViewInterface
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let containerMainView = ContainerMainView()
+        window!.rootViewController = containerMainView
+        window!.makeKeyAndVisible()
+        
         return true
     }
 

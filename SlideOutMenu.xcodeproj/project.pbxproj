@@ -15,6 +15,9 @@
 		C29DBC791DF2B27600E916D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29DBC771DF2B27600E916D4 /* LaunchScreen.storyboard */; };
 		C29DBC841DF2B27600E916D4 /* SlideOutMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBC831DF2B27600E916D4 /* SlideOutMenuTests.swift */; };
 		C29DBC8F1DF2B27600E916D4 /* SlideOutMenuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBC8E1DF2B27600E916D4 /* SlideOutMenuUITests.swift */; };
+		C29DBC9D1DF2B44600E916D4 /* ContainerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBC9C1DF2B44600E916D4 /* ContainerMainView.swift */; };
+		C29DBC9F1DF2B76100E916D4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBC9E1DF2B76100E916D4 /* MainView.swift */; };
+		C29DBCA11DF2B77F00E916D4 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29DBCA01DF2B77F00E916D4 /* SideMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		C29DBC8A1DF2B27600E916D4 /* SlideOutMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlideOutMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29DBC8E1DF2B27600E916D4 /* SlideOutMenuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideOutMenuUITests.swift; sourceTree = "<group>"; };
 		C29DBC901DF2B27600E916D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C29DBC9C1DF2B44600E916D4 /* ContainerMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerMainView.swift; sourceTree = "<group>"; };
+		C29DBC9E1DF2B76100E916D4 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C29DBCA01DF2B77F00E916D4 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,9 @@
 			children = (
 				C29DBC6B1DF2B27600E916D4 /* AppDelegate.swift */,
 				C29DBC6D1DF2B27600E916D4 /* ViewController.swift */,
+				C29DBC9C1DF2B44600E916D4 /* ContainerMainView.swift */,
+				C29DBC9E1DF2B76100E916D4 /* MainView.swift */,
+				C29DBCA01DF2B77F00E916D4 /* SideMenuController.swift */,
 				C29DBC6F1DF2B27600E916D4 /* Main.storyboard */,
 				C29DBC751DF2B27600E916D4 /* Assets.xcassets */,
 				C29DBC771DF2B27600E916D4 /* LaunchScreen.storyboard */,
@@ -265,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C29DBC9D1DF2B44600E916D4 /* ContainerMainView.swift in Sources */,
+				C29DBCA11DF2B77F00E916D4 /* SideMenuController.swift in Sources */,
 				C29DBC6E1DF2B27600E916D4 /* ViewController.swift in Sources */,
 				C29DBC741DF2B27600E916D4 /* SlideOutMenu.xcdatamodeld in Sources */,
+				C29DBC9F1DF2B76100E916D4 /* MainView.swift in Sources */,
 				C29DBC6C1DF2B27600E916D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +528,7 @@
 				C29DBC951DF2B27600E916D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C29DBC961DF2B27600E916D4 /* Build configuration list for PBXNativeTarget "SlideOutMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +537,7 @@
 				C29DBC981DF2B27600E916D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C29DBC991DF2B27600E916D4 /* Build configuration list for PBXNativeTarget "SlideOutMenuUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +546,7 @@
 				C29DBC9B1DF2B27600E916D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
